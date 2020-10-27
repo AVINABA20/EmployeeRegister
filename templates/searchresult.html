@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Result</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        button {
+            padding-top: 20px;
+            padding-bottom: 50px;
+        }
+        .myDiv {
+            border: 5px outset red;    
+            text-align: center;
+          }
+    </style>
+</head>
+<body>
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container p-3 my-3 border">
+            <h1>Search Results </h1>
+        </div>
+        <div class="container p-3 my-3 border">
+
+            {% for data in results %}
+            <table class="table container">
+                <tr>
+                    <th>Employee ID :</th>
+                    <th>{{data.employee_id}}</th>
+                </tr>
+                <tr>
+                    <th>Employee Name :</th>
+                    <th>{{data.employee_name}}</th>
+                </tr>
+                <tr>
+                    <th>Address :</th>
+                    <th>{{data.address}}</th>
+                </tr>
+                <tr>
+                    <th>Date of Birth :</th>
+                    <th>{{data.dobDay}}th {{data.dobMon}}, {{data.dobYear}}</th>
+                </tr>
+                <tr>
+                    <th>Mobile No. :</th>
+                    <th>{{data.mobile_no}}</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </table>
+            {% endfor %}
+
+        </div>
+        <form action="gohome">
+            <div class="container p-3 my-3 border myDiv">
+                <button type="submit" class="btn btn-primary btn-lg">HOME</button>
+            </div>
+        </form>
+
+    </div>
+
+    
+</body>
+</html>

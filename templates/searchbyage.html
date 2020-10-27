@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        button {
+            padding-top: 20px;
+            padding-bottom: 50px;
+        }
+        .myDiv {
+            border: 5px outset red;    
+            text-align: center;
+        }
+        label {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container p-3 my-3 border">
+            <h1>Search By AGE</h1>
+        </div>
+
+        <div class="container p-3 my-3 border">
+            <form action="searchforage" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="usr">Provide AGE(in Years) : </label>
+                    <input type="number" class="form-control" name="searchage" required pattern="\S+">
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+    
+        <form action="gohome">
+            <div class="container p-3 my-3 border myDiv">
+                <button type="submit" class="btn btn-primary btn-lg">HOME</button>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+</html>
